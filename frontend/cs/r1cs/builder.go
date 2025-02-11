@@ -13,10 +13,10 @@ import (
 	"github.com/consensys/gnark/constraint"
 	"github.com/consensys/gnark/debug"
 	"github.com/consensys/gnark/frontend"
+	"github.com/consensys/gnark/frontend/frontendtype"
 	"github.com/consensys/gnark/frontend/internal/expr"
 	"github.com/consensys/gnark/frontend/schema"
 	"github.com/consensys/gnark/internal/circuitdefer"
-	"github.com/consensys/gnark/internal/frontendtype"
 	"github.com/consensys/gnark/internal/kvstore"
 	"github.com/consensys/gnark/internal/tinyfield"
 	"github.com/consensys/gnark/internal/utils"
@@ -494,4 +494,8 @@ func (builder *builder) ToCanonicalVariable(in frontend.Variable) frontend.Canon
 		term.MarkConstant()
 		return constraint.LinearExpression{term}
 	}
+}
+
+func (builder *builder) GetNbConstraints() int {
+	return builder.cs.GetNbConstraints()
 }

@@ -750,3 +750,7 @@ func (builder *builder) GetWireConstraints(wires []frontend.Variable, addMissing
 	}
 	return res, nil
 }
+
+func (builder *builder) GetNbConstraints() int {
+	return builder.cs.GetNbConstraints()
+}

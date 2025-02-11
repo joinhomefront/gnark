@@ -131,6 +131,12 @@ type API interface {
 	// Compiler returns the compiler object for advanced circuit development
 	Compiler() Compiler
 
+	// ---------------------------------------------------------------------------------------------
+	// Extensions
+
+	// GetNbConstraints is a shortcut to builder.cs.GetNbConstraints()
+	GetNbConstraints() int
+
 	// Deprecated APIs
 
 	// NewHint is a shortcut to api.Compiler().NewHint()
